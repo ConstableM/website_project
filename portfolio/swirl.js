@@ -16,7 +16,7 @@ const noiseSteps = 8;
 const xOff = 0.00125;
 const yOff = 0.00125;
 const zOff = 0.0005;
-const backgroundColor = 'hsla(0, 0, 0, )';
+const backgroundColor = 'hsla(109, 97%, 88%, 1);';
 
 const { PI, cos, sin, abs, sqrt, pow, round, random, atan2 } = Math;
 const HALF_PI = 0.5 * PI;

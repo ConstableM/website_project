@@ -1,5 +1,6 @@
 
 import "./styles.css";
+import ColorPicker from "./ColorPicker";
 
 const OuterBorder = () => {
 
@@ -32,13 +33,12 @@ const OuterBorder = () => {
     <button class="btn btn-down btn-down--black">Contact</button>
   </div>
       
-  <p className="description">Software engineer specializing in web app development with Typescript, Node.js, Next.js, React, TailwindCSS, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostgreSQL, Google Cloud, and Cloudflare.</p>
         
 
   <div className="emailsignup">
     <p>Subscribe to get new posts straight to your email inbox &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(you can unsubscribe anytime.)</p>
       <form className="emailForm">
-        <input type="text" id="fname" name="fname" ></input>
+        <input type="text" id="fname"  ></input>
         <input type="submit"></input>
         </form>
         
@@ -53,16 +53,18 @@ const OuterBorder = () => {
 
 
       <div className="box">
-      <p> Color UI</p>
+
+        <div className="colorpicker">
+          <ColorPicker/>
+        </div>
+
       </div>
-  
     </div>
 
 
+</div>
 
 
-
-      </div>
     );
   };
   

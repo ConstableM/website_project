@@ -1,0 +1,156 @@
+
+/* outborder */
+
+.rectangle {
+    width: calc(100% - 80px);
+    height: calc(100vh - 80px);
+    margin: 40px;
+    border: 1px solid rgb(255, 255, 255); /* You can adjust the thickness of the border */
+    box-sizing: border-box; /* Ensure the border is included in the element's total width and height */
+    font-family: 'Inter';
+    src: url('path/to/fonts/Inter-Regular.woff2') format('woff2'),
+         url('path/to/fonts/Inter-Regular.woff') format('woff');
+
+          } 
+
+  .rectangle::before {
+    z-index: -1;
+  
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Black tint with 50% opacity */
+    pointer-events: none; /* Ensure it doesn't interfere with mouse events */
+  }
+  
+  .box {
+    flex: 1; /* Each box will take up an equal portion of the container's width */
+    border: 1px solid rgb(255, 255, 255); /* Optional: To visualize the borders */
+    padding: 20px; /* Optional: Add some padding */
+  }
+  
+  .container {
+    
+    display: flex;
+    height: calc(100vh - 140px);
+    letter-spacing: 1px;
+    padding: 30px;
+  
+  }
+  
+  .box1{
+    text-align: left;
+    font-size: 50px;
+  
+  }
+  .name{
+    line-height:0;
+  color: rgb(255, 255, 255);
+  
+  }
+  
+  .title{
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(230, 230, 230);
+  
+  
+  }
+  
+  .box2{
+    padding-top: 25px;
+    font-size: 15px;
+    color: rgb(230, 230, 230);
+  
+  }
+  
+  
+  
+  .p1:hover, .p2:hover ,.p3:hover ,.p4:hover  {
+    transition: color 0.3s ease; /* Optional: smooth transition */
+    color: rgb(255, 255, 255); /* Color on hover */
+  }
+  
+  /* center box */
+  
+  .contactButton{
+    padding-left: 7.7vw;
+    padding-top: 22vh;
+    
+  }
+  
+  
+  .btn {
+    text-transform: uppercase;
+    border-radius: 10px;
+    
+  } 
+   
+  .btn:hover .btn-slide-show-text1 {
+    margin-left: 65px;
+  } 
+   
+  .btn-down {
+    border: none;
+    outline: none;
+    background: none;
+    text-align: center;
+    display: inline-block;
+    width: 180px;
+    height: 40px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.1s;
+  } 
+   
+  .btn-down::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 200px;
+    width: 250px;
+    border-radius: 50%;
+    bottom: 100%;
+    left: -30px;
+    transition: 0.5s;
+  } 
+   
+  .btn-down:hover {
+    color: rgb(0, 0, 0);
+  } 
+   
+  .btn-down:hover::before {
+    bottom: -50px;
+  } 
+   
+  .btn-down--black {
+    color: rgb(243, 243, 243);
+    border: 1px solid rgb(228, 228, 228);
+  } 
+  
+  .btn-down--black::before {
+    background: rgb(230, 230, 230);
+  } 
+  
+  .description{
+    padding-top: 10px;
+    padding-left: 15px;
+    color:white;
+    font-weight:   100;
+    letter-spacing: 2px;
+  }
+  
+  .emailsignup{
+    padding-top: 325px;
+    padding-left: 15px;
+    color:white;
+    font-weight: 200;
+  }
+  .emailForm{
+    padding-left: 6.5vw;
+  
+  }

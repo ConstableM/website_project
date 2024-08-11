@@ -1,5 +1,5 @@
-import BackroundSwirl from "./BackroundSwirl";
-import OuterBorder from "./OuterBorder";
+import BackroundSwirl from "../Components/BackroundSwirl";
+import OuterBorder from "../Components/OuterBorder.jsx";
 
 const Homepage = () => {
     return(

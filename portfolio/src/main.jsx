@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import "./index.css";
-import Homepage from "./Homepage.jsx";
+import Homepage from "./Pages/Homepage.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +13,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <Homepage/>
   },
+
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
