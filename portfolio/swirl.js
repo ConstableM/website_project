@@ -6,17 +6,17 @@ const particlePropsLength = particleCount * particlePropCount;
 const rangeY = 100;
 const baseTTL = 50;
 const rangeTTL = 150;
-const baseSpeed = .5;
+let baseSpeed = .5;
 const rangeSpeed = 1;
 const baseRadius = 1;
 const rangeRadius = 4;
-const baseHue = 120;
+let baseHue = 120;
 const rangeHue = 115;
 const noiseSteps = 8;
 const xOff = 0.00125;
 const yOff = 0.00125;
 const zOff = 0.0005;
-const backgroundColor = 'hsla(109, 97%, 88%, 1);';
+let backgroundColor = 'hsla(109, 97%, 88%, 1);';
 
 const { PI, cos, sin, abs, sqrt, pow, round, random, atan2 } = Math;
 const HALF_PI = 0.5 * PI;
@@ -51,7 +51,15 @@ let speeds;
 let sizes;
 let hues;
 
-function setup() {
+
+function setColors(color,particlecolor, speed){
+  backgroundColor = color;
+  baseHue = particlecolor;
+  baseSpeed = speed;
+}
+
+function setup(color,particlecolor, speed) {
+  setColors(color,particlecolor, speed);
 	createCanvas();
   resize();
   initParticles();

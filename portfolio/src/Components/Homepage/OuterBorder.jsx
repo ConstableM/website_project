@@ -18,8 +18,11 @@ const OuterBorder = () => {
     <div className="box2">
           <p className="p1">Home</p>
           <p className="p2">Projects</p>
-          <p className="p3">Contact</p>
-          <p className="p4">Newsletter</p>
+
+          <div className="colorpicker">
+          <ColorPicker/>
+        </div>
+
     </div>
 
   </div>
@@ -54,9 +57,7 @@ const OuterBorder = () => {
 
       <div className="box">
 
-        <div className="colorpicker">
-          <ColorPicker/>
-        </div>
+     
 
       </div>
     </div>

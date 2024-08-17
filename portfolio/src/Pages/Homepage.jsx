@@ -1,5 +1,7 @@
-import BackroundSwirl from "../Components/BackroundSwirl";
-import OuterBorder from "../Components/OuterBorder.jsx";
+import BackroundSwirl from "../Components/Homepage/BackroundSwirl.jsx"
+import OuterBorder from "../Components/Homepage/OuterBorder.jsx"
+import Project from "../Components/ProjectsPage/Project.jsx"
+
 
 const Homepage = () => {
     return(
@@ -7,6 +9,7 @@ const Homepage = () => {
         <div>
             <BackroundSwirl/>
             <OuterBorder/>
+            <Project/>
         </div>
 
 
