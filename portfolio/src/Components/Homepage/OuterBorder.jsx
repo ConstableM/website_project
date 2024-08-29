@@ -5,9 +5,11 @@ import ColorPicker from "./ColorPicker";
 const OuterBorder = () => {
 
     return ( 
-      <div className="rectangle" style={{ position: 'relative', zIndex: '1' }}>
+      <div className="rectangle" style={{ position: 'absolute', zIndex: '1' }}>
+
 
 <div className="container">
+
   <div className="box">
 
     <div className="box1">

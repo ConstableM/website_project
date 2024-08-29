@@ -10,6 +10,8 @@
     font-family: 'Inter';
     src: url('path/to/fonts/Inter-Regular.woff2') format('woff2'),
          url('path/to/fonts/Inter-Regular.woff') format('woff');
+    position: 'absolute';
+    z-index: 1;
 
           } 
 
