@@ -1,141 +1,216 @@
-
 /* outborder */
 
-.rectangel {
-    width: calc(100% - 80px);
-    height: calc(100vh - 80px);
-    margin: 40px;
-    border: 1px solid rgb(255, 255, 255); /* You can adjust the thickness of the border */
-    box-sizing: border-box; /* Ensure the border is included in the element's total width and height */
-    position: 'absolute';
-    background: rgba(0, 0, 0, 0.4); /* Black tint with 50% opacity */
+.rectangle {
+  width: calc(100% - 80px);
+  height: calc(100vh - 80px);
+  margin: 40px;
+  border: 1px solid rgb(255, 255, 255);
+  box-sizing: border-box; /* Ensure the border is included in the element's total width and height */
+  font-family: 'Inter';
+  src: url('path/to/fonts/Inter-Regular.woff2') format('woff2'),
+       url('path/to/fonts/Inter-Regular.woff') format('woff');
+  background: rgba(0, 0, 0, 0.4); /* Black tint with 40% opacity */
+}
 
-  
-  } 
-  
-  .box {
-    flex: 1; /* Each box will take up an equal portion of the container's width */
-    padding: 20px; /* Optional: Add some padding */
-  }
-  
-  .container {
-    
-    display: flex;
-    height: calc(100vh - 140px);
-    letter-spacing: 1px;
-    padding: 30px;
-  
-  }
-  
-  .box1{
-    text-align: left;
-    font-size: 50px;
-  
-  }
-  .name{
-    line-height:0;
+.box {
+  flex: 1; /* Each box will take up an equal portion of the container's width */
+  border: 1px solid rgb(255, 255, 255); /* Optional: To visualize the borders */
+  padding: 20px; /* Optional: Add some padding */
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 140px);
+  letter-spacing: 1px;
+  padding: 30px;
+}
+
+.box1 {
+  text-align: left;
+  font-size: 50px;
+}
+
+.name {
+  line-height: 0;
   color: rgb(255, 255, 255);
-  
-  }
-  
-  .title{
-  font-size: 15px;
+}
+
+.title {
+  font-size: 18px;
   font-weight: 100;
-  color: rgb(230, 230, 230);
-  
-  
-  }
-  
-  .box2{
-    padding-top: 25px;
-    font-size: 15px;
-    color: rgb(230, 230, 230);
-  
-  }
-  
-  
-  
-  .p1:hover, .p2:hover ,.p3:hover ,.p4:hover  {
-    transition: color 0.3s ease; /* Optional: smooth transition */
-    color: rgb(255, 255, 255); /* Color on hover */
-  }
-  
-  /* center box */
-  
-  .contactButton{
-    padding-left: 7.7vw;
-    padding-top: 22vh;
-    
-  }
-  
-  
-  .btn {
-    text-transform: uppercase;
-    border-radius: 10px;
-    
-  } 
-   
-  .btn:hover .btn-slide-show-text1 {
-    margin-left: 65px;
-  } 
-   
-  .btn-down {
-    border: none;
-    outline: none;
-    background: none;
-    text-align: center;
-    display: inline-block;
-    width: 180px;
-    height: 40px;
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.1s;
-  } 
-   
-  .btn-down::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    height: 200px;
-    width: 250px;
-    border-radius: 50%;
-    bottom: 100%;
-    left: -30px;
-    transition: 0.5s;
-  } 
-   
-  .btn-down:hover {
-    color: rgb(0, 0, 0);
-  } 
-   
-  .btn-down:hover::before {
-    bottom: -50px;
-  } 
-   
-  .btn-down--black {
-    color: rgb(243, 243, 243);
-    border: 1px solid rgb(228, 228, 228);
-  } 
-  
-  .btn-down--black::before {
-    background: rgb(230, 230, 230);
-  } 
-  
-  .description{
-    padding-top: 10px;
-    padding-left: 15px;
-    color:white;
-    font-weight: 200;
-  }
-  
-  .emailsignup{
-    padding-top: 200px;
-    padding-left: 15px;
-    color:white;
-    font-weight: 200;
-  }
-  .emailForm{
-    padding-left: 6.5vw;
-  
-  }
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+
+.p1, .p2 {
+  color: rgb(238, 238, 238);
+  font-size: 15px;
+}
+.projects-wrapper {
+  display: flex; /* Align arrows and container horizontally */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Position context for absolute arrows */
+  padding: 0 50px; /* Add padding to accommodate arrows */
+}
+
+.projects-wrapper {
+  display: flex; /* Align arrows and container horizontally */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Position context for absolute arrows */
+  padding: 0 50px; /* Add padding to accommodate arrows */
+}
+
+.projects-container {
+  display: flex; /* Arrange project boxes in a row */
+  gap: 0; /* No space between items */
+  flex: 1; /* Take up available space */
+  padding: 0 20px; /* Add padding to avoid content touching the arrows */
+  overflow: hidden; /* Hide horizontal scrollbar */
+}
+
+.ProjectBox {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+  flex: 1; /* Allow boxes to grow and shrink equally */
+  min-width: 0; /* Prevent shrinking below the content size */
+  /* Ensure consistent size for boxes */
+}
+
+.arrow {
+  background: #ddd; /* Background color of the arrows */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Round shape */
+  width: 40px; /* Width of the arrow button */
+  height: 40px; /* Height of the arrow button */
+  display: flex; /* Flexbox for centering arrow */
+  align-items: center; /* Center arrow vertically */
+  justify-content: center; /* Center arrow horizontally */
+  cursor: default; /* Default cursor as the arrows are not interactive */
+  position: absolute; /* Position arrows absolutely within the wrapper */
+  z-index: 1; /* Ensure arrows are above other content */
+  top: 50%; /* Center vertically within the wrapper */
+  transform: translateY(-50%); /* Center vertically */
+}
+
+.left-arrow {
+  left: 10px; /* Position on the left side with some margin */
+}
+
+.right-arrow {
+  right: 10px; /* Position on the right side with some margin */
+}
+
+
+
+.ProjectBox {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+/* Additional styles */
+
+.p1:hover, .p2:hover, .p3:hover, .p4:hover {
+  transition: color 0.3s ease; /* Optional: smooth transition */
+  color: rgb(77, 31, 31); /* Color on hover */
+}
+
+.colorpicker {
+  padding-top: 0px;
+}
+
+.box2 {
+  position: fixed;
+  width: 500px;
+  text-align: center;
+  color: white;
+  margin-left: 28%;
+}
+
+/* Button styles */
+
+.btn {
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 65px;
+}
+
+.btn-down {
+  border: none;
+  outline: none;
+  background: none;
+  text-align: center;
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.1s;
+}
+
+.btn-down::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 200px;
+  width: 250px;
+  border-radius: 50%;
+  bottom: 100%;
+  left: -30px;
+  transition: 0.5s;
+}
+
+.btn-down:hover {
+  color: rgb(0, 0, 0);
+}
+
+.btn-down:hover::before {
+  bottom: -50px;
+}
+
+.btn-down--black {
+  color: rgb(243, 243, 243);
+  border: 1px solid rgb(228, 228, 228);
+}
+
+.btn-down--black::before {
+  background: rgb(230, 230, 230);
+}
+
+.description {
+  padding-top: 10px;
+  padding-left: 15px;
+  color: white;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.emailsignup {
+  color: white;
+  font-weight: 200;
+}
+
+.toggle-button {
+  width: 200px;
+  height: 40px;
+  margin: 10px;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
