@@ -10,6 +10,7 @@
   src: url('path/to/fonts/Inter-Regular.woff2') format('woff2'),
        url('path/to/fonts/Inter-Regular.woff') format('woff');
   background: rgba(0, 0, 0, 0.4); /* Black tint with 40% opacity */
+  z-index:1000000;
 }
 
 .box {
