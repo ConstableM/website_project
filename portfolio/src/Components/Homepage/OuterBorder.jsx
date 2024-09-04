@@ -3,16 +3,18 @@ import "./OuterBorder.css";
 import ColorPicker from "./ColorPicker";
 import Contact from "./Contact";
 import Project from "./Project";
+import BoxInfo from "./BoxInfo"; // Import BoxInfo
 
 const OuterBorder = () => {
-    const [currentSection, setCurrentSection] = useState('home'); // default to 'home'
-    const [currentBoxSet, setCurrentBoxSet] = useState(1); // Track which set of boxes to show
+    const [currentSection, setCurrentSection] = useState('home');
+    const [currentBoxSet, setCurrentBoxSet] = useState(1);
+    const [selectedProject, setSelectedProject] = useState(null); // State for selected project
 
     const showHome = () => setCurrentSection('home');
     const showAbout = () => setCurrentSection('about');
     const showProjects = () => setCurrentSection('projects');
 
-    const totalBoxSets = 3; // Total number of box sets
+    const totalBoxSets = 2;
 
     const showNextSet = () => {
         setCurrentBoxSet(prevSet => (prevSet % totalBoxSets) + 1);
@@ -22,9 +24,13 @@ const OuterBorder = () => {
         setCurrentBoxSet(prevSet => (prevSet - 2 + totalBoxSets) % totalBoxSets + 1);
     };
 
+    const handleProjectClick = (projectId) => {
+        setSelectedProject(projectId); // Update selected project ID
+    };
+
     return (
         <div className="rectangle" style={{ position: 'absolute', zIndex: '1' }}>
-            <div className="container"> {/* Nesting Begin */}
+            <div className="container">
                 <div className="box1">
                     <p className="name">Michael Constable</p>
                     <p className="title">Software Developer</p>
@@ -32,7 +38,7 @@ const OuterBorder = () => {
                     <p className="p2" onClick={showProjects} style={{ cursor: 'pointer' }}>Projects</p>
                     <div className="p2 clickable" onClick={showAbout} style={{ cursor: 'pointer' }}>About</div>
                     <div className="colorpicker"><ColorPicker /></div>
-                </div> {/* end box 1 */}
+                </div>
 
                 <div className="box2">
                     {currentSection === 'about' && (
@@ -56,45 +62,41 @@ const OuterBorder = () => {
                         </>
                     )}
                     {currentSection === 'projects' && (
-                        <div className="projects-wrapper">
-                            <button 
-                                className="arrow left-arrow" 
-                                onClick={showPreviousSet}
-                            >
-                                ←
-                            </button>
-                            <div className="projects-container">
-                                {currentBoxSet === 1 && (
-                                    <>
-                                        <Project text="Personal Portfolio" />
-                                        <Project text="Text for Project 2" />
-                                        <Project text="Text for Project 3" />
-                                    </>
-                                )}
-                                {currentBoxSet === 2 && (
-                                    <>
-                                        <Project text="Text for Project 4" />
-                                        <Project text="Text for Project 5" />
-                                        <Project text="Text for Project 6" />
-                                    </>
-                                )}
-                                {currentBoxSet === 3 && (
-                                    <>
-                                        <Project text="Text for Project 7" />
-                                        <Project text="Text for Project 8" />
-                                        <Project text="Text for Project 9" />
-                                    </>
-                                )}
+                        <div className="">
+                            <BoxInfo selectedProject={selectedProject} /> {/* Display BoxInfo */}
+                            <div className="projects-wrapper">
+                                <button 
+                                    className="arrow left-arrow" 
+                                    onClick={showPreviousSet}
+                                >
+                                    ←
+                                </button>
+                                <div className="projects-container">
+                                    {currentBoxSet === 1 && (
+                                        <>
+                                            <Project text="Personal Portfolio" onClick={() => handleProjectClick(1)} />
+                                            <Project text="Shell in C" onClick={() => handleProjectClick(5)} />
+                                            <Project text="TA Scheduler" onClick={() => handleProjectClick(2)} />
+                                        </>
+                                    )}
+                                    {currentBoxSet === 2 && (
+                                        <>
+                                            <Project text="Minesweeper" onClick={() => handleProjectClick(4)} />
+                                            <Project text="Interpreter" onClick={() => handleProjectClick(6)} />
+                                            <Project text="Fitness Forum/Tracker" onClick={() => handleProjectClick(3)} />
+                                        </>
+                                    )}
+                                </div>
+                                <button 
+                                    className="arrow right-arrow" 
+                                    onClick={showNextSet}
+                                >
+                                    →
+                                </button>
                             </div>
-                            <button 
-                                className="arrow right-arrow" 
-                                onClick={showNextSet}
-                            >
-                                →
-                            </button>
                         </div>
                     )}
-                </div>{/* end box 2 */}
+                </div>
             </div>
         </div>
     );

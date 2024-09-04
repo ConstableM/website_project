@@ -1,22 +1,15 @@
 /* outborder */
 
 .rectangle {
-  width: calc(100% - 80px);
+  width: calc(100% - 100px);
   height: calc(100vh - 80px);
-  margin: 40px;
+  margin-left: 40px;
   border: 1px solid rgb(255, 255, 255);
   box-sizing: border-box; /* Ensure the border is included in the element's total width and height */
   font-family: 'Inter';
-  src: url('path/to/fonts/Inter-Regular.woff2') format('woff2'),
-       url('path/to/fonts/Inter-Regular.woff') format('woff');
   background: rgba(0, 0, 0, 0.4); /* Black tint with 40% opacity */
-  z-index:1000000;
-}
-
-.box {
-  flex: 1; /* Each box will take up an equal portion of the container's width */
-  border: 1px solid rgb(255, 255, 255); /* Optional: To visualize the borders */
-  padding: 20px; /* Optional: Add some padding */
+  z-index: 1000000;
+  margin-top: 30px;
 }
 
 .container {
@@ -47,38 +40,63 @@
   color: rgb(238, 238, 238);
   font-size: 15px;
 }
-.projects-wrapper {
-  display: flex; /* Align arrows and container horizontally */
-  align-items: center; /* Center items vertically */
-  position: relative; /* Position context for absolute arrows */
-  padding: 0 50px; /* Add padding to accommodate arrows */
-}
 
 .projects-wrapper {
   display: flex; /* Align arrows and container horizontally */
   align-items: center; /* Center items vertically */
-  position: relative; /* Position context for absolute arrows */
+  position: fixed; /* Adjusted to position arrows within the flow */
   padding: 0 50px; /* Add padding to accommodate arrows */
+  width: 480px; /* Full width minus padding for arrows */
+  margin-left:-24px;
+  transform: translateX(45px); /* Move 100px to the right */
+
+  
 }
 
 .projects-container {
   display: flex; /* Arrange project boxes in a row */
-  gap: 0; /* No space between items */
-  flex: 1; /* Take up available space */
-  padding: 0 20px; /* Add padding to avoid content touching the arrows */
   overflow: hidden; /* Hide horizontal scrollbar */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  width: 450px; /* Fixed width for the container */
+  height: 80px; /* Fixed height for the container */
 }
-
 .ProjectBox {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
   box-sizing: border-box; /* Ensure padding and border are included in width/height */
-  flex: 1; /* Allow boxes to grow and shrink equally */
-  min-width: 0; /* Prevent shrinking below the content size */
-  /* Ensure consistent size for boxes */
+  width: 150px; /* Fixed width for each box */
+  height: 80px; /* Fixed height for each box */
+  margin: 0; /* No space between boxes */
+  display: flex; /* Center content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  overflow: hidden; /* Ensure text doesn't overflow */
+  
 }
 
+.ProjectBox p {
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center text */
+  word-wrap: break-word; /* Break long words to fit */
+  
+}
+
+.MyInfo{
+  font-size: 15px;
+  border: 1px solid white;
+  padding:40px;
+  height: 472px;
+  width:800px;
+  display: flex;
+  margin-top: 110px;
+  margin-left: -150px;
+  background: rgba(0, 0, 0, 0.5); /* Black tint with 40% opacity */
+  transform: translateX(15px); /* Move 100px to the right */
+
+
+
+}
 .arrow {
   background: #ddd; /* Background color of the arrows */
   border: none; /* Remove default border */
@@ -88,7 +106,7 @@
   display: flex; /* Flexbox for centering arrow */
   align-items: center; /* Center arrow vertically */
   justify-content: center; /* Center arrow horizontally */
-  cursor: default; /* Default cursor as the arrows are not interactive */
+  cursor: pointer; /* Pointer cursor for interactivity */
   position: absolute; /* Position arrows absolutely within the wrapper */
   z-index: 1; /* Ensure arrows are above other content */
   top: 50%; /* Center vertically within the wrapper */
@@ -96,32 +114,32 @@
 }
 
 .left-arrow {
-  left: 10px; /* Position on the left side with some margin */
+  left: -20px; /* Position on the left side with some margin */
 }
 
 .right-arrow {
   right: 10px; /* Position on the right side with some margin */
 }
 
-
-
-.ProjectBox {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding and border are included in width/height */
-}
-
-/* Additional styles */
-
-.p1:hover, .p2:hover, .p3:hover, .p4:hover {
-  transition: color 0.3s ease; /* Optional: smooth transition */
-  color: rgb(77, 31, 31); /* Color on hover */
-}
-
 .colorpicker {
   padding-top: 0px;
 }
+
+.box-info {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid #ccc;
+  margin-top: 100px;
+  border-radius: 5px;
+  height: 400px; /* Match height with projects-container */
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Ensure it can be moved */
+  transform: translateX(45px); /* Move 100px to the right */
+}
+
 
 .box2 {
   position: fixed;
@@ -159,7 +177,7 @@
 .btn-down::before {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 4;
   height: 200px;
   width: 250px;
   border-radius: 50%;

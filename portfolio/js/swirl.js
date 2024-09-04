@@ -6,8 +6,8 @@ const particlePropsLength = particleCount * particlePropCount;
 const rangeY = 100;
 const baseTTL = 50;
 const rangeTTL = 150;
-const baseSpeed = 0.1;
-const rangeSpeed = 2;
+const baseSpeed = 0.7;
+const rangeSpeed = 0;
 const baseRadius = 1;
 const rangeRadius = 4;
 let baseHue = 220;
@@ -187,6 +187,8 @@ function renderToScreen() {
   ctx.b.restore();
 }
 
+let drawValue = true;
+
 function draw() {
   tick++;
 
@@ -198,15 +200,22 @@ function draw() {
   drawParticles();
   renderGlow();
   renderToScreen();
-
+if (drawValue == true){
 	window.requestAnimationFrame(draw);
+
+}
 }
 function changeBaseHue(color){
-    console.log(baseHue);
-    baseHue= color;
-        console.log(baseHue);
+
+    baseHue = color;
+
+  
+
+
+
 
 }
+export { changeBaseHue };
 
 window.addEventListener('load', setup);
 window.addEventListener('resize', resize);

@@ -10,9 +10,7 @@ const BoxInfo = ({ selectedProject }) => {
         4: "An early-stage top-down RPG in GameMaker, inspired by bullet hell games. This project focuses on delivering a challenging, soulslike experience with intricate combat and bullet-hell mechanics.",
         5: "Developed a custom shell in C, offering basic command execution, process management, and input handling. This project demonstrates my understanding of operating system principles and C programming, providing a robust foundation for command-line interface functionality.",
         6: "Developed a versatile interpreter app designed to parse and execute code in a custom language. Built with a focus on accurate syntax handling and efficient execution, this project showcases my skills in language design and implementation, providing a robust tool for testing and debugging code.",
-        7: "Created a classic Minesweeper game using JavaScript, featuring dynamic grid generation and interactive gameplay. This project highlights my proficiency in JavaScript and game logic, offering a clean, user-friendly interface and responsive design for an engaging puzzle experience.",
-        8: "Select a Project to see details",
-        9: "Select a Project to see details"
+
     };
 
     return (
