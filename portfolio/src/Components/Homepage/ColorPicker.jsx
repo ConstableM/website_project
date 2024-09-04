@@ -3,27 +3,65 @@ import "./ColorPicker.css";
 import { changeBaseHue } from '../../../js/swirl.js'; // Adjust the path as necessary
 
 const ColorPicker = () => {
+    // Custom hue map
+    const customHueMap = {
+        0: 0,     // Red
+        1: 15,    // Orange
+        2: 51,
+        3: 53,    // Yellow
+        4: 56,
+        5: 59,
+        6: 61,
+        7: 63,
+        8: 70,
+        9: 85,
+        10: 90,
+        11: 106,
+        12: 112,
+        13: 135,  // Green
+        14: 158,
+        15: 177,
+        16: 178,
+        17: 179,
+        18: 182,
+        19: 186,  // Cyan
+        20: 190,
+        21: 191,
+        22: 195,
+        23: 222,  // Blue
+        24: 260,
+        25: 280,
+        26: 285,
+        27: 290,
+        28: 294,
+        29: 296,
+        30: 302,
+        31: 310,
+        32: 320,
+        33: 330,
+        34: 340,
+    };
+
+    
     // State for hue value
-    const [baseHue, setBaseHue] = useState(0); // Initial hue value
+    const [baseHueIndex, setBaseHueIndex] = useState(0); // Initial hue index value
     const [isVisible, setIsVisible] = useState(false); // Initial state: color picker hidden, button visible
 
     // Handle changes to the base slider (hue)
     const handleBaseSliderChange = (event) => {
-        setBaseHue(event.target.value);
+        const index = Number(event.target.value);
+        setBaseHueIndex(index);
     };
 
     // Handle Reset Button Click
     const handleReset = () => {
-        setBaseHue(0);
+        setBaseHueIndex(0);
     };
 
     // Handle Submit Button Click
     const handleSubmit = () => {
-        // Convert baseHue to a number before passing it to changeBaseHue
-        const hueValue = Number(baseHue);
+        const hueValue = customHueMap[baseHueIndex];
         changeBaseHue(hueValue);
-        
-
     };
 
     // Toggle visibility of color picker
@@ -33,7 +71,7 @@ const ColorPicker = () => {
 
     // Styles for the base box
     const baseColorStyle = {
-        backgroundColor: `hsl(${baseHue}, 100%, 50%)`, // Box color based on base slider hue
+        backgroundColor: `hsl(${customHueMap[baseHueIndex]}, 100%, 50%)`, // Box color based on base slider hue
     };
 
     return (
@@ -52,8 +90,8 @@ const ColorPicker = () => {
                             <input
                                 type="range"
                                 min="0"
-                                max="360"
-                                value={baseHue}
+                                max="36"
+                                value={baseHueIndex}
                                 onChange={handleBaseSliderChange}
                             />
                         </div>
