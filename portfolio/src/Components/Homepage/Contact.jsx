@@ -22,8 +22,8 @@ const Contact = () => {
           the last 4 years I have had the opportunity to travel to many unique countries and experience so many new things. I am always open to relocation, quite franky all I need to be happy in life 
           is an internet connection, food, water, and some kind of roof.<br /><br />
           
-          Additionally I recently picked up archery, and am learning wire-weaving jewelry design and creation. I won't bore anyone with extreme details on my hobbys here, but 
-          if you have similar interests feel free to reach out I'm always happy to talk more!<br />
+          I won't bore anyone with extreme details on my hobbys here, but if you have similar interests feel free to reach out I'm always happy to talk more!<br />
+          <br /> Email: Xecreth@gmail.com
               </p>
     </div>
     </>

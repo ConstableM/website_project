@@ -28,15 +28,23 @@ const OuterBorder = () => {
         setSelectedProject(projectId); // Update selected project ID
     };
 
+    const goToGithub = () => {
+        window.location.href = "https://github.com/ConstableM?tab=repositories";
+    };
+
     return (
         <div className="rectangle" style={{ position: 'absolute', zIndex: '1' }}>
             <div className="container">
                 <div className="box1">
                     <p className="name">Michael Constable</p>
                     <p className="title">Software Developer</p>
-                    <p className="p1" onClick={showHome} style={{ cursor: 'pointer' }}>Home</p>
+
+                    <p className="p2" onClick={showHome} style={{ cursor: 'pointer' }}>Home</p>
+                    <p className="p2 clickable" onClick={goToGithub} style={{ cursor: 'pointer' }}>Github</p>
                     <p className="p2" onClick={showProjects} style={{ cursor: 'pointer' }}>Projects</p>
-                    <div className="p2 clickable" onClick={showAbout} style={{ cursor: 'pointer' }}>About</div>
+                    <p className="p2 clickable" onClick={showAbout} style={{ cursor: 'pointer' }}>About</p>
+                    <p className="p2">Resume</p>
+
                     <div className="colorpicker"><ColorPicker /></div>
                 </div>
 
@@ -75,15 +83,15 @@ const OuterBorder = () => {
                                     {currentBoxSet === 1 && (
                                         <>
                                             <Project text="Personal Portfolio" onClick={() => handleProjectClick(1)} />
-                                            <Project text="Shell in C" onClick={() => handleProjectClick(5)} />
+                                            <Project text="Fitness Forum/Tracker" onClick={() => handleProjectClick(5)} />
                                             <Project text="TA Scheduler" onClick={() => handleProjectClick(2)} />
                                         </>
                                     )}
                                     {currentBoxSet === 2 && (
                                         <>
-                                            <Project text="Minesweeper" onClick={() => handleProjectClick(4)} />
-                                            <Project text="Interpreter" onClick={() => handleProjectClick(6)} />
-                                            <Project text="Fitness Forum/Tracker" onClick={() => handleProjectClick(3)} />
+                                            <Project text="Minor Projects" onClick={() => handleProjectClick(3)} />
+                                            <Project text="TCP/IP Stack in C" onClick={() => handleProjectClick(6)} />
+                                            <Project text="Data Structure" onClick={() => handleProjectClick(4)} />
                                         </>
                                     )}
                                 </div>

@@ -11,7 +11,7 @@ const rangeSpeed = .3;
 const baseRadius = 1;
 const rangeRadius = 4;
 let baseHue = 220;
-const rangeHue = 50;
+const rangeHue = 20;
 const noiseSteps = 8;
 const xOff = 0.00125;
 const yOff = 0.00125;
@@ -110,7 +110,7 @@ function drawParticle(x, y, x2, y2, life, ttl, radius, hue) {
   ctx.a.save();
   ctx.a.lineCap = 'round';
   ctx.a.lineWidth = radius;
-  ctx.a.strokeStyle = `hsla(${hue},100%,60%,${fadeInOut(life, ttl)})`;
+  ctx.a.strokeStyle = `hsla(${hue},120%,50%,${fadeInOut(life, ttl)})`;
   ctx.a.beginPath();
   ctx.a.moveTo(x, y);
   ctx.a.lineTo(x2, y2);
@@ -208,6 +208,7 @@ if (drawValue == true){
 function changeBaseHue(color){
 
     baseHue = color;
+    console.log(baseHue);
 
   
 

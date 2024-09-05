@@ -6,7 +6,7 @@ const ColorPicker = () => {
     // Custom hue map
     const customHueMap = {
         0: 0,     // Red
-        1: 15,    // Orange
+        1: 13,    // Orange
         2: 51,
         3: 53,    // Yellow
         4: 56,
