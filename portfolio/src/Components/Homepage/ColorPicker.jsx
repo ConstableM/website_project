@@ -42,7 +42,6 @@ const ColorPicker = () => {
         34: 340,
     };
 
-    
     // State for hue value
     const [baseHueIndex, setBaseHueIndex] = useState(0); // Initial hue index value
     const [isVisible, setIsVisible] = useState(false); // Initial state: color picker hidden, button visible
@@ -71,7 +70,7 @@ const ColorPicker = () => {
 
     // Styles for the base box
     const baseColorStyle = {
-        backgroundColor: `hsl(${customHueMap[baseHueIndex]}, 100%, 50%)`, // Box color based on base slider hue
+        backgroundColor: baseHueIndex === 36 ? 'black' : `hsl(${customHueMap[baseHueIndex]}, 100%, 50%)`,
     };
 
     return (
