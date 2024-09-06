@@ -56,13 +56,11 @@ const OuterBorder = () => {
                     )}
                     {currentSection === 'home' && (
                         <>
-                            <p className="introduction">
-                                New Grad CS developer with experience developing applications using Python, HTML/CSS/JS, React, Django, TypeScript, Tailwind, SQL, noSQL, AWS, and Docker.
-                            </p>
-                            <p>Resume Github</p>
+                      
                             <div className="emailsignup">
-                                <p>Subscribe to get new posts straight to your email.</p>
+                                <p>Subscribe to get new project updates</p>
                                 <form className="emailForm">
+                                    Email: 
                                     <input type="text" id="fname" />
                                     <input type="submit" />
                                 </form>

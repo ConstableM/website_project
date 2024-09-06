@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ColorPicker.css";
-import { changeBaseHue } from '../../../js/swirl.js'; // Adjust the path as necessary
+import { changeBaseHue } from '../../js/swirl.js';
 
 const ColorPicker = () => {
     // Custom hue map

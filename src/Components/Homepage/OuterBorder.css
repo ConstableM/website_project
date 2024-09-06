@@ -175,6 +175,10 @@
   transition: color 0.1s;
 }
 
+.emailsignup{
+  margin-top: 650px;
+margin-right: -80px;
+}
 
 .btn-down::before {
   content: "";
