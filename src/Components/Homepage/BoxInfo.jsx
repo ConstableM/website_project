@@ -5,7 +5,7 @@ import './BoxInfo.css'; // Make sure to import the CSS file if it's in a separat
 const BoxInfo = ({ selectedProject }) => {
     // Placeholder for project details
     const projectDetails = {
-        1: "Built using the react framework, hosted on a Digital Ocean Dropet I configured. Nginx to serve the frontend and an Express backend to facilitate communication with MongoDB Atlas. To get some docker practice I also created a containerized version building my own image, uploading to my Droplet container registry, pulling and serving it, however this version simply serves the build directory rather than the containerized version.",
+        1: "Built using the react framework, hosted on a Digital Ocean Droplet I configured. Nginx to serve the frontend and an Express backend to facilitate communication with MongoDB Atlas. To get some docker practice I also created a containerized version building my own image, uploading to my Droplet container registry, pulling and serving it, however this version simply serves the build directory rather than the containerized version.",
         2: "A TA scheduler application designed to streamline the scheduling for teaching assistants. The app features a user-friendly interface for managing and organizing schedules for UWM faculty.",
         3: "Minor networking projects I work on as I continue to study networking topics can be found here.",
         4: "Various completed DS&A coursework in java, all with thorough unit testing making use of JUnit.",
@@ -16,10 +16,10 @@ const BoxInfo = ({ selectedProject }) => {
     // Mapping project IDs to GitHub links
     const projectLinks = {
         1: "https://github.com/ConstableM/website_project",
-        2: "https://github.com/your-profile/ta-scheduler-repo", //replace
+        2: "https://github.com/your-profile/ta-scheduler-repo", // replace
         3: "https://github.com/ConstableM/Minor-Networking-Projects",
         4: "https://github.com/ConstableM/DSA-Coursework",
-        5: "https://github.com/your-profile/fitness-planner-repo", // replace
+        5: "https://github.com/ConstableM/FPT-Frontend", 
         6: "https://github.com/ConstableM/L2-and-L3-TCP-IP-Stack-Implentation",
     };
 
@@ -29,7 +29,7 @@ const BoxInfo = ({ selectedProject }) => {
     return (
         <div className="box-info">
             <p>{selectedProject ? projectDetails[selectedProject] : "Select a project to see details."}</p>
-            {githubLink && (
+            {selectedProject !== 2 && githubLink && (
                 <a href={githubLink} target="_blank" rel="noopener noreferrer">
                     <button className="GitHubRef">View on GitHub</button>
                 </a>

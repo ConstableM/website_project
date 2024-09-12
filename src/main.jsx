@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import Homepage from "./Pages/Homepage.jsx";
+import OuterBorder from "./Components/Homepage/OuterBorder.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,7 +10,8 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage/>
+    element: <OuterBorder/>
+
   },
 
 
