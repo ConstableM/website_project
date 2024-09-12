@@ -11,6 +11,16 @@
   z-index: 1000000;
   margin-top: 30px;
 }
+.toggle-button {
+  margin-top: 380px;
+  color: white;
+  background-color: #000000; /* Blue background for toggle button */
+  border: 1px solid white;
+}
+
+.toggle-button:hover {
+  background-color: #e8e8e8; /* Light grey on hover */
+}
 
 .container {
   display: flex;
@@ -176,7 +186,7 @@
 }
 
 .emailsignup{
-  margin-top: 650px;
+  margin-top: 630px;
 margin-right: -80px;
 }
 

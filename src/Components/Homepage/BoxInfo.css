@@ -1,0 +1,26 @@
+/* General styles for buttons */
+.GitHubRef {
+    height: 40px;
+    width: 160px;
+    margin: 10px;
+    background-color: #000000; /* Black background */
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 1px solid white;
+    
+}
+
+/* Button hover effect */
+.GitHubRef:hover {
+    background-color: #ffffff; /* Darker shade for hover effect */
+    color: #000000; /* Darker shade for hover effect */
+
+}
+.box-info{
+    padding:40px;  
+    line-height: 25px;
+}
