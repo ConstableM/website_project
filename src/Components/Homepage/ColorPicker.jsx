@@ -70,7 +70,7 @@ const ColorPicker = () => {
 
     // Styles for the base box
     const baseColorStyle = {
-        backgroundColor: baseHueIndex === 36 ? 'black' : `hsl(${customHueMap[baseHueIndex]}, 100%, 50%)`,
+        backgroundColor: (baseHueIndex === 35 || baseHueIndex === 36) ? 'black' : `hsl(${customHueMap[baseHueIndex]}, 100%, 50%)`,
     };
 
     return (

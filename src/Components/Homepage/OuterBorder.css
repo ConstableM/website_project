@@ -32,7 +32,7 @@
 .box1 {
   text-align: left;
   font-size: 50px;
-  z-index: 10000;
+  z-index: 100000;
 }
 
 .name {
@@ -44,12 +44,14 @@
   font-size: 18px;
   font-weight: 100;
   color: rgb(255, 255, 255);
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .p1, .p2 {
   color: rgb(238, 238, 238);
   font-size: 15px;
+  z-index: 10000; /* Set a higher z-index */
+
 }
 
 .projects-wrapper {
@@ -133,7 +135,8 @@
 }
 
 .colorpicker {
-  margin-top: -40px;
+margin-top: -20px;
+margin-left:-20px;
 }
 
 .box-info {
@@ -186,7 +189,7 @@
 }
 
 .emailsignup{
-  margin-top: 630px;
+  margin-top: 610px;
 margin-right: -80px;
 }
 
@@ -200,6 +203,39 @@ margin-right: -80px;
   bottom: 100%;
   left: -30px;
   transition: 0.5s;
+}
+
+.submit-button {
+  background-color: #000000; /* Green background */
+  color: white;              /* White text */
+  padding: 10px 20px;       /* Padding */
+  margin-left: 5px;
+  border: none;             /* No border */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor on hover */
+  border: 1px solid white;
+  transition: background-color 0.3s; /* Smooth transition */
+  height: 35px;
+}
+.email-input {
+  width: 200px;
+  height:13px;               /* Full width */
+  padding: 10px;            /* Padding for better touch target */
+  border: 1px solid #ffffff; /* Green border */
+  border-radius: 5px;       /* Rounded corners */
+  font-size: 16px;          /* Font size */
+  margin-bottom: 10px;      /* Space below the input */
+  background-color: #000000;
+  color: white;
+  margin-left:5px;
+}
+
+
+
+.submit-button:hover {
+  background-color: #d3d3d3; /* Darker green on hover */
+  color: rgb(0, 0, 0);              /* White text */
+
 }
 
 .btn-down:hover {
@@ -234,7 +270,7 @@ margin-right: -80px;
 
 .toggle-button {
   width: 200px;
-  height: 40px;
+  height: 20px;
   margin: 10px;
   background-color: #007bff; /* Blue background */
   color: white;

@@ -10,9 +10,7 @@ const OuterBorder = () => {
     const [currentSection, setCurrentSection] = useState('home');
     const [currentBoxSet, setCurrentBoxSet] = useState(1);
     const [selectedProject, setSelectedProject] = useState(null); // State for selected project
-
     const [email, setEmail] = useState(''); // State for email input
-    const [message, setMessage] = useState(''); // State for feedback message
 
     const showHome = () => setCurrentSection('home');
     const showAbout = () => setCurrentSection('about');
@@ -43,15 +41,15 @@ const OuterBorder = () => {
         try {
             // Send POST request to the server
             await axios.post('http://localhost:3000/add-email', { email });
-            setMessage('Email added successfully');
             setEmail(''); // Clear the input field
         } catch (error) {
-            setMessage('Error adding email: ' + error.message);
-        }
+            // Optionally handle error without displaying a message
+            setEmail(''); // Clear the input field
+            }
     };
 
     return (
-        <div className="rectangle" style={{ position: 'absolute', zIndex: '1' }}>
+        <div className="rectangle" style={{ position: 'absolute', zIndex: '10000' }}>
             <div className="container">
                 <div className="box1">
                     <p className="name">Michael Constable</p>
@@ -61,7 +59,9 @@ const OuterBorder = () => {
                     <p className="p2 clickable" onClick={goToGithub} style={{ cursor: 'pointer' }}>Github</p>
                     <p className="p2" onClick={showProjects} style={{ cursor: 'pointer' }}>Projects</p>
                     <p className="p2 clickable" onClick={showAbout} style={{ cursor: 'pointer' }}>About</p>
-                    <p className="p2">Resume</p>
+                    <p className="p2 clickable" onClick={() => window.open("https://drive.google.com/file/d/1Pb_UMM_HhRQRrAf_ko1qfKFtSHhecP71/view?usp=sharing", "_blank")} style={{ cursor: 'pointer' }}>
+                        Resume
+                    </p>
 
                     <div className="colorpicker"><ColorPicker /></div>
                 </div>
@@ -74,19 +74,20 @@ const OuterBorder = () => {
                     )}
                     {currentSection === 'home' && (
                         <div className="emailsignup">
-                            <p>Subscribe to get new project updates</p>
+                            <p>Subscribe for project updates.</p>
                             <form className="emailForm" onSubmit={handleSubmit}>
                                 <label>
                                     Email:
                                     <input
                                         type="text"
+                                        className="email-input" // Custom class for styling
                                         id="fname"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         required
                                     />
                                 </label>
-                                <input type="submit" value="Submit" />
+                                <button type="submit" className="submit-button">Submit</button>
                             </form>
                         </div>
                     )}
